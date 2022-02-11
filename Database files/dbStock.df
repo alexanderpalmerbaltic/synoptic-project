@@ -1,0 +1,86 @@
+ADD TABLE "OurProducts"
+  AREA "Schema Area"
+  DUMP-NAME "ourproducts"
+
+ADD FIELD "ItemCode" OF "OurProducts" AS character 
+  FORMAT "x(9)"
+  INITIAL ""
+  POSITION 2
+  MAX-WIDTH 18
+  ORDER 10
+
+ADD FIELD "Gender" OF "OurProducts" AS character 
+  FORMAT "x(8)"
+  INITIAL ""
+  POSITION 3
+  MAX-WIDTH 16
+  ORDER 20
+
+ADD FIELD "Brand" OF "OurProducts" AS character 
+  FORMAT "x(8)"
+  INITIAL ""
+  POSITION 4
+  MAX-WIDTH 16
+  ORDER 30
+
+ADD FIELD "ProductType" OF "OurProducts" AS character 
+  FORMAT "x(20)"
+  INITIAL ""
+  POSITION 5
+  MAX-WIDTH 40
+  ORDER 40
+
+ADD FIELD "Colour" OF "OurProducts" AS character 
+  FORMAT "x(8)"
+  INITIAL ""
+  POSITION 6
+  MAX-WIDTH 16
+  ORDER 50
+
+ADD FIELD "ProductDescription" OF "OurProducts" AS character 
+  FORMAT "x(40)"
+  INITIAL ""
+  POSITION 7
+  MAX-WIDTH 80
+  ORDER 60
+
+ADD FIELD "Size" OF "OurProducts" AS character 
+  FORMAT "x(100)"
+  INITIAL ""
+  POSITION 8
+  MAX-WIDTH 200
+  ORDER 70
+
+ADD FIELD "Price" OF "OurProducts" AS decimal 
+  FORMAT "->>,>>9.99"
+  INITIAL "0"
+  POSITION 9
+  MAX-WIDTH 17
+  DECIMALS 2
+  ORDER 80
+
+ADD FIELD "Quantity" OF "OurProducts" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 10
+  MAX-WIDTH 4
+  ORDER 90
+
+ADD FIELD "Location" OF "OurProducts" AS character 
+  FORMAT "x(40)"
+  INITIAL ""
+  POSITION 11
+  MAX-WIDTH 80
+  ORDER 100
+
+ADD INDEX "idxPrime" ON "OurProducts" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "ItemCode" ASCENDING 
+
+.
+PSC
+cpstream=ISO8859-1
+.
+0000001512
