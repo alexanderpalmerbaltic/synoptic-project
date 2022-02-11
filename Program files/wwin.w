@@ -140,7 +140,7 @@ DEFINE BUTTON btnSearch6  NO-FOCUS
      FONT 12.
 
 DEFINE IMAGE IMAGE-1
-     FILENAME "EPA Synoptic Project/Images/stylishyou_logo_main.png":U
+     FILENAME "Images/stylishyou_logo_main.png":U
      STRETCH-TO-FIT
      SIZE 12.8 BY 3.05.
 
@@ -158,7 +158,7 @@ DEFINE VARIABLE edSearchQuery AS CHARACTER
      BGCOLOR 15 FONT 10 NO-UNDO.
 
 DEFINE IMAGE imageResults
-     FILENAME "C:/Users/e4013507/Documents/EPA Synoptic Project/Images/stylishyou_logo_main.png":U
+     FILENAME "Images/stylishyou_logo_main.png":U
      STRETCH-TO-FIT
      SIZE 12.8 BY 3.05.
 
@@ -180,7 +180,7 @@ DEFINE VARIABLE fiResultsBrand AS CHARACTER FORMAT "X(256)":U
      SIZE 25 BY .62 NO-UNDO.
 
 DEFINE IMAGE imageResults-2
-     FILENAME "C:/Users/e4013507/Documents/EPA Synoptic Project/Images/stylishyou_logo_main.png":U
+     FILENAME "Images/stylishyou_logo_main.png":U
      STRETCH-TO-FIT
      SIZE 12.8 BY 3.05.
 
@@ -242,7 +242,7 @@ DEFINE VARIABLE fiSearchBrand AS CHARACTER FORMAT "X(256)":U
      SIZE 25 BY .62 NO-UNDO.
 
 DEFINE IMAGE imageSearch-2
-     FILENAME "C:/Users/e4013507/Documents/EPA Synoptic Project/Images/stylishyou_logo_main.png":U
+     FILENAME "Images/stylishyou_logo_main.png":U
      STRETCH-TO-FIT
      SIZE 12.8 BY 3.05.
 
@@ -300,7 +300,7 @@ DEFINE VARIABLE fiPriceMin AS DECIMAL FORMAT "£>>,>>9.99":U INITIAL .01
      BGCOLOR 15  NO-UNDO.
 
 DEFINE IMAGE imageSearch
-     FILENAME "C:/Users/e4013507/Documents/EPA Synoptic Project/Images/stylishyou_logo_green.png":U
+     FILENAME "Images/stylishyou_logo_green.png":U
      STRETCH-TO-FIT
      SIZE 12.8 BY 3.05.
 
@@ -362,7 +362,7 @@ DEFINE VARIABLE fiSearchProductType AS CHARACTER FORMAT "X(256)":U
      SIZE 25 BY .62 NO-UNDO.
 
 DEFINE IMAGE imageSearch-3
-     FILENAME "C:/Users/e4013507/Documents/EPA Synoptic Project/Images/stylishyou_logo_main.png":U
+     FILENAME "Images/stylishyou_logo_main.png":U
      STRETCH-TO-FIT
      SIZE 12.8 BY 3.05.
 
@@ -407,19 +407,6 @@ DEFINE FRAME fMain
          SIDE-LABELS NO-UNDERLINE THREE-D 
          AT COL 1 ROW 1
          SIZE 60 BY 22 WIDGET-ID 100.
-
-DEFINE FRAME fResultsBrand
-     btnHomeResults-2 AT ROW 20.29 COL 36 WIDGET-ID 28
-     edSearchQuery-2 AT ROW 5.76 COL 6 NO-LABEL WIDGET-ID 36
-     brResults-2 AT ROW 11.48 COL 6 WIDGET-ID 500
-     btnBack-2 AT ROW 20.29 COL 6 WIDGET-ID 40
-     fiResultsBrand AT ROW 3.14 COL 29 COLON-ALIGNED NO-LABEL WIDGET-ID 38
-     imageResults-2 AT ROW 1.95 COL 11.4 WIDGET-ID 2
-    WITH 1 DOWN NO-BOX KEEP-TAB-ORDER OVERLAY 
-         SIDE-LABELS NO-UNDERLINE THREE-D 
-         AT COL 1 ROW 1
-         SIZE 60 BY 22
-         FONT 10 WIDGET-ID 800.
 
 DEFINE FRAME fSearchProductType
      btnFind-3 AT ROW 17.43 COL 6 WIDGET-ID 30
@@ -486,18 +473,6 @@ DEFINE FRAME fSearchGender
          SIZE 60 BY 22
          FONT 10 WIDGET-ID 300.
 
-DEFINE FRAME fResults
-     btnHomeResults AT ROW 20.29 COL 36 WIDGET-ID 28
-     edSearchQuery AT ROW 5.76 COL 6 NO-LABEL WIDGET-ID 36
-     brResults AT ROW 11.48 COL 6 WIDGET-ID 500
-     btnBack AT ROW 20.29 COL 6 WIDGET-ID 38
-     imageResults AT ROW 1.95 COL 24.6 WIDGET-ID 2
-    WITH 1 DOWN NO-BOX KEEP-TAB-ORDER OVERLAY 
-         SIDE-LABELS NO-UNDERLINE THREE-D 
-         AT COL 1 ROW 1
-         SIZE 60 BY 22
-         FONT 10 WIDGET-ID 400.
-
 DEFINE FRAME fHome
      btnSearch1 AT ROW 6.71 COL 7 WIDGET-ID 2
      btnSearch2 AT ROW 6.71 COL 35 WIDGET-ID 12
@@ -510,6 +485,31 @@ DEFINE FRAME fHome
          SIDE-LABELS NO-UNDERLINE THREE-D 
          AT COL 1 ROW 1
          SIZE 60 BY 22 WIDGET-ID 200.
+
+DEFINE FRAME fResultsBrand
+     btnHomeResults-2 AT ROW 20.29 COL 36 WIDGET-ID 28
+     edSearchQuery-2 AT ROW 5.76 COL 6 NO-LABEL WIDGET-ID 36
+     brResults-2 AT ROW 11.48 COL 6 WIDGET-ID 500
+     btnBack-2 AT ROW 20.29 COL 6 WIDGET-ID 40
+     fiResultsBrand AT ROW 3.14 COL 29 COLON-ALIGNED NO-LABEL WIDGET-ID 38
+     imageResults-2 AT ROW 1.95 COL 11.4 WIDGET-ID 2
+    WITH 1 DOWN NO-BOX KEEP-TAB-ORDER OVERLAY 
+         SIDE-LABELS NO-UNDERLINE THREE-D 
+         AT COL 1 ROW 1
+         SIZE 60 BY 22
+         FONT 10 WIDGET-ID 800.
+
+DEFINE FRAME fResults
+     btnHomeResults AT ROW 20.29 COL 36 WIDGET-ID 28
+     edSearchQuery AT ROW 5.76 COL 6 NO-LABEL WIDGET-ID 36
+     brResults AT ROW 11.48 COL 6 WIDGET-ID 500
+     btnBack AT ROW 20.29 COL 6 WIDGET-ID 38
+     imageResults AT ROW 1.95 COL 24.6 WIDGET-ID 2
+    WITH 1 DOWN NO-BOX KEEP-TAB-ORDER OVERLAY 
+         SIDE-LABELS NO-UNDERLINE THREE-D 
+         AT COL 1 ROW 1
+         SIZE 60 BY 22
+         FONT 10 WIDGET-ID 400.
 
 
 /* *********************** Procedure Settings ************************ */
@@ -579,11 +579,11 @@ ASSIGN FRAME fHome:FRAME = FRAME fMain:HANDLE
 
 DEFINE VARIABLE XXTABVALXX AS LOGICAL NO-UNDO.
 
-ASSIGN XXTABVALXX = FRAME fSearchBrand:MOVE-BEFORE-TAB-ITEM (FRAME fSearchGender:HANDLE)
-       XXTABVALXX = FRAME fSearchProductType:MOVE-BEFORE-TAB-ITEM (FRAME fSearchBrand:HANDLE)
-       XXTABVALXX = FRAME fResults:MOVE-BEFORE-TAB-ITEM (FRAME fSearchProductType:HANDLE)
-       XXTABVALXX = FRAME fResultsBrand:MOVE-BEFORE-TAB-ITEM (FRAME fResults:HANDLE)
-       XXTABVALXX = FRAME fHome:MOVE-BEFORE-TAB-ITEM (FRAME fResultsBrand:HANDLE)
+ASSIGN XXTABVALXX = FRAME fSearchProductType:MOVE-BEFORE-TAB-ITEM (FRAME fHome:HANDLE)
+       XXTABVALXX = FRAME fSearchGender:MOVE-BEFORE-TAB-ITEM (FRAME fSearchProductType:HANDLE)
+       XXTABVALXX = FRAME fResultsBrand:MOVE-BEFORE-TAB-ITEM (FRAME fSearchGender:HANDLE)
+       XXTABVALXX = FRAME fSearchBrand:MOVE-BEFORE-TAB-ITEM (FRAME fResultsBrand:HANDLE)
+       XXTABVALXX = FRAME fResults:MOVE-BEFORE-TAB-ITEM (FRAME fSearchBrand:HANDLE)
 /* END-ASSIGN-TABS */.
 
 /* SETTINGS FOR FRAME fResults
@@ -983,7 +983,7 @@ ON CHOOSE OF btnSearch1 IN FRAME fHome /* Mens */
 DO:
     /* When the Mens button on the home screen is pressed the search type is set
     and the appropriate search screen and logo are displayed */
-    DEFINE VARIABLE lvImagePath AS CHARACTER NO-UNDO INITIAL "EPA Synoptic Project\Images\StylishYou_Logo_Green.png".
+    DEFINE VARIABLE lvImagePath AS CHARACTER NO-UNDO INITIAL "Images\StylishYou_Logo_Green.png".
 
     ASSIGN pvSearchType = 1.
 
@@ -1012,7 +1012,7 @@ DO:
     /* When the Ladies button on the home screen is pressed the search type is set
     and the appropriate search screen and logo are displayed */
 
-    DEFINE VARIABLE lvImagePath AS CHARACTER NO-UNDO INITIAL "EPA Synoptic Project\Images\StylishYou_Logo_Red.png".
+    DEFINE VARIABLE lvImagePath AS CHARACTER NO-UNDO INITIAL "Images\StylishYou_Logo_Red.png".
 
     ASSIGN pvSearchType = 2.
 
@@ -1041,7 +1041,7 @@ DO:
     /* When the Boys button on the home screen is pressed the search type is set
     and the appropriate search screen and logo are displayed */
 
-    DEFINE VARIABLE lvImagePath AS CHARACTER NO-UNDO INITIAL "EPA Synoptic Project\Images\StylishYou_Logo_Orange.png".
+    DEFINE VARIABLE lvImagePath AS CHARACTER NO-UNDO INITIAL "Images\StylishYou_Logo_Orange.png".
 
     ASSIGN pvSearchType = 3.
 
@@ -1070,7 +1070,7 @@ DO:
     /* When the Girls button on the home screen is pressed the search type is set
     and the appropriate search screen and logo are displayed */
 
-    DEFINE VARIABLE lvImagePath AS CHARACTER NO-UNDO INITIAL "EPA Synoptic Project\Images\StylishYou_Logo_Orange.png".
+    DEFINE VARIABLE lvImagePath AS CHARACTER NO-UNDO INITIAL "Images\StylishYou_Logo_Orange.png".
 
     ASSIGN pvSearchType = 4.
 
@@ -1105,7 +1105,7 @@ DO:
 
     ASSIGN pvSearchType = 5.
 
-    RUN "EPA Synoptic Project\Program files\dgSelect.r"
+    RUN "Program files\dgSelect.r"
         (INPUT pvSearchType,
          OUTPUT lvSelection,
          OUTPUT lvSuccess).
@@ -1142,11 +1142,15 @@ DO:
     DEFINE VARIABLE lvSelection AS CHARACTER NO-UNDO.
     DEFINE VARIABLE lvSuccess AS LOGICAL NO-UNDO.
 
-    DEFINE VARIABLE lvImagePath AS CHARACTER NO-UNDO INITIAL "EPA Synoptic Project\Images\StylishYou_Logo_Main.png".
+    DEFINE VARIABLE lvCount AS INTEGER NO-UNDO.
+    DEFINE VARIABLE lvRegularSizes AS CHARACTER NO-UNDO.
+    DEFINE VARIABLE lvShoeSizes AS CHARACTER NO-UNDO.
+
+    DEFINE VARIABLE lvImagePath AS CHARACTER NO-UNDO INITIAL "Images\StylishYou_Logo_Main.png".
 
     ASSIGN pvSearchType = 6.
 
-    RUN "EPA Synoptic Project\Program files\dgSelect.r"
+    RUN "Program files\dgSelect.r"
         (INPUT pvSearchType,
          OUTPUT lvSelection,
          OUTPUT lvSuccess).
@@ -1155,6 +1159,40 @@ DO:
         LEAVE.
 
     ASSIGN fiSearchProductType:SCREEN-VALUE IN FRAME fSearchProductType = lvSelection.
+
+    /* Set the sizes based on the product type */
+    ASSIGN
+        lvRegularSizes = "Size,S,M,L,XL,XXL"
+        lvShoeSizes = "Size,6,6.5,7,7.5,8,8.5,9,9.5,10,10.5,11,12,13".
+
+    IF fiSearchProductType:SCREEN-VALUE IN FRAME fSearchProductType = "Shoes" THEN
+    DO:
+        DO WHILE cbSize3:NUM-ITEMS > 0:
+           cbSize3:DELETE(1).
+        END.
+
+        DO lvCount = 1 TO NUM-ENTRIES(lvShoeSizes):
+            cbSize3:ADD-LAST(ENTRY(lvCount, lvShoeSizes)).
+        END.
+
+        IF cbSize3:NUM-ITEMS > 0 THEN
+           ASSIGN cbSize3:SCREEN-VALUE = cbSize3:ENTRY(1).
+    END.
+    ELSE
+    DO:
+        DO WHILE cbSize3:NUM-ITEMS > 0:
+           cbSize3:DELETE(1).
+        END.
+
+        DO lvCount = 1 TO NUM-ENTRIES(lvRegularSizes):
+            cbSize3:ADD-LAST(ENTRY(lvCount, lvRegularSizes)).
+        END.
+
+        IF cbSize3:NUM-ITEMS > 0 THEN
+           ASSIGN cbSize3:SCREEN-VALUE = cbSize3:ENTRY(1).
+
+    END.
+
 
     DO WITH FRAME {&FRAME-NAME}:
 
@@ -1167,6 +1205,100 @@ DO:
 
         imageResults:LOAD-IMAGE(lvImagePath)  IN FRAME fResults.
     END.      
+END.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+
+&Scoped-define FRAME-NAME fSearchGender
+&Scoped-define SELF-NAME cbProductType
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _CONTROL cbProductType wWin
+ON VALUE-CHANGED OF cbProductType IN FRAME fSearchGender
+DO:
+  DEFINE VARIABLE lvCount AS INTEGER NO-UNDO.
+  DEFINE VARIABLE lvRegularSizes AS CHARACTER NO-UNDO.
+  DEFINE VARIABLE lvShoeSizes AS CHARACTER NO-UNDO.
+
+  ASSIGN
+      lvRegularSizes = "Size,S,M,L,XL,XXL"
+      lvShoeSizes = "Size,6,6.5,7,7.5,8,8.5,9,9.5,10,10.5,11,12,13".
+
+  IF cbProductType:SCREEN-VALUE = "Shoes" THEN
+  DO:
+      DO WHILE cbSize:NUM-ITEMS > 0:
+         cbSize:DELETE(1).
+      END.
+
+      DO lvCount = 1 TO NUM-ENTRIES(lvShoeSizes):
+          cbSize:ADD-LAST(ENTRY(lvCount, lvShoeSizes)).
+      END.
+
+      IF cbSize:NUM-ITEMS > 0 THEN
+         ASSIGN cbSize:SCREEN-VALUE = cbSize:ENTRY(1).
+  END.
+  ELSE
+  DO:
+      DO WHILE cbSize:NUM-ITEMS > 0:
+         cbSize:DELETE(1).
+      END.
+
+      DO lvCount = 1 TO NUM-ENTRIES(lvRegularSizes):
+          cbSize:ADD-LAST(ENTRY(lvCount, lvRegularSizes)).
+      END.
+
+      IF cbSize:NUM-ITEMS > 0 THEN
+         ASSIGN cbSize:SCREEN-VALUE = cbSize:ENTRY(1).
+
+  END.
+
+END.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+
+&Scoped-define FRAME-NAME fSearchBrand
+&Scoped-define SELF-NAME cbProductType2
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _CONTROL cbProductType2 wWin
+ON VALUE-CHANGED OF cbProductType2 IN FRAME fSearchBrand
+DO:
+    DEFINE VARIABLE lvCount AS INTEGER NO-UNDO.
+    DEFINE VARIABLE lvRegularSizes AS CHARACTER NO-UNDO.
+    DEFINE VARIABLE lvShoeSizes AS CHARACTER NO-UNDO.
+
+    ASSIGN
+        lvRegularSizes = "Size,S,M,L,XL,XXL"
+        lvShoeSizes = "Size,6,6.5,7,7.5,8,8.5,9,9.5,10,10.5,11,12,13".
+
+    IF cbProductType2:SCREEN-VALUE = "Shoes" THEN
+    DO:
+        DO WHILE cbSize2:NUM-ITEMS > 0:
+           cbSize2:DELETE(1).
+        END.
+
+        DO lvCount = 1 TO NUM-ENTRIES(lvShoeSizes):
+            cbSize2:ADD-LAST(ENTRY(lvCount, lvShoeSizes)).
+        END.
+
+        IF cbSize2:NUM-ITEMS > 0 THEN
+           ASSIGN cbSize2:SCREEN-VALUE = cbSize2:ENTRY(1).
+    END.
+    ELSE
+    DO:
+        DO WHILE cbSize2:NUM-ITEMS > 0:
+           cbSize2:DELETE(1).
+        END.
+
+        DO lvCount = 1 TO NUM-ENTRIES(lvRegularSizes):
+            cbSize2:ADD-LAST(ENTRY(lvCount, lvRegularSizes)).
+        END.
+
+        IF cbSize2:NUM-ITEMS > 0 THEN
+           ASSIGN cbSize2:SCREEN-VALUE = cbSize2:ENTRY(1).
+
+    END.
+  
 END.
 
 /* _UIB-CODE-BLOCK-END */
