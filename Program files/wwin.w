@@ -1,5 +1,7 @@
 &ANALYZE-SUSPEND _VERSION-NUMBER AB_v10r12 GUI ADM2
 &ANALYZE-RESUME
+/* Connected Databases 
+*/
 &Scoped-define WINDOW-NAME wWin
 {adecomm/appserv.i}
 &ANALYZE-SUSPEND _UIB-CODE-BLOCK _CUSTOM _DEFINITIONS wWin 
@@ -379,10 +381,10 @@ DEFINE QUERY brResults-2 FOR
 DEFINE BROWSE brResults
 &ANALYZE-SUSPEND _UIB-CODE-BLOCK _DISPLAY-FIELDS brResults wWin _FREEFORM
   QUERY brResults DISPLAY
-      tProductDescription COLUMN-LABEL "Product Desc" WIDTH 16
-    tBrand COLUMN-LABEL "Brand" WIDTH 7
-    tQuantity COLUMN-LABEL "Quantity" WIDTH 10
-    tAvailableInStore COLUMN-LABEL "In Store" WIDTH 9
+      tProductDescription FORMAT "x(18)" COLUMN-LABEL "Product Desc" WIDTH 19
+    tBrand COLUMN-LABEL "Brand" WIDTH 10
+    tQuantity COLUMN-LABEL "Qty" WIDTH 4
+    tAvailableInStore COLUMN-LABEL "In Store" WIDTH 7
 /* _UIB-CODE-BLOCK-END */
 &ANALYZE-RESUME
     WITH NO-ROW-MARKERS SEPARATORS SIZE 50 BY 8
@@ -391,9 +393,9 @@ DEFINE BROWSE brResults
 DEFINE BROWSE brResults-2
 &ANALYZE-SUSPEND _UIB-CODE-BLOCK _DISPLAY-FIELDS brResults-2 wWin _FREEFORM
   QUERY brResults-2 DISPLAY
-      tProductDescription COLUMN-LABEL "Product Desc" WIDTH 23
-    tQuantity COLUMN-LABEL "Quantity" WIDTH 10
-    tAvailableInStore COLUMN-LABEL "In Store" WIDTH 9
+      tProductDescription FORMAT "x(31)" COLUMN-LABEL "Product Desc" WIDTH 30
+    tQuantity COLUMN-LABEL "Qty" WIDTH 4
+    tAvailableInStore COLUMN-LABEL "In Store" WIDTH 7
 /* _UIB-CODE-BLOCK-END */
 &ANALYZE-RESUME
     WITH NO-ROW-MARKERS SEPARATORS SIZE 50 BY 8
@@ -408,18 +410,6 @@ DEFINE FRAME fMain
          AT COL 1 ROW 1
          SIZE 60 BY 22 WIDGET-ID 100.
 
-DEFINE FRAME fResults
-     btnHomeResults AT ROW 20.29 COL 36 WIDGET-ID 28
-     edSearchQuery AT ROW 5.76 COL 6 NO-LABEL WIDGET-ID 36
-     brResults AT ROW 11.48 COL 6 WIDGET-ID 500
-     btnBack AT ROW 20.29 COL 6 WIDGET-ID 38
-     imageResults AT ROW 1.95 COL 24.6 WIDGET-ID 2
-    WITH 1 DOWN NO-BOX KEEP-TAB-ORDER OVERLAY 
-         SIDE-LABELS NO-UNDERLINE THREE-D 
-         AT COL 1 ROW 1
-         SIZE 60 BY 22
-         FONT 10 WIDGET-ID 400.
-
 DEFINE FRAME fResultsBrand
      btnHomeResults-2 AT ROW 20.29 COL 36 WIDGET-ID 28
      edSearchQuery-2 AT ROW 5.76 COL 6 NO-LABEL WIDGET-ID 36
@@ -432,19 +422,6 @@ DEFINE FRAME fResultsBrand
          AT COL 1 ROW 1
          SIZE 60 BY 22
          FONT 10 WIDGET-ID 800.
-
-DEFINE FRAME fHome
-     btnSearch1 AT ROW 6.71 COL 7 WIDGET-ID 2
-     btnSearch2 AT ROW 6.71 COL 35 WIDGET-ID 12
-     btnSearch3 AT ROW 12.05 COL 7 WIDGET-ID 10
-     btnSearch4 AT ROW 12.05 COL 35 WIDGET-ID 8
-     btnSearch5 AT ROW 17.43 COL 7 WIDGET-ID 6
-     btnSearch6 AT ROW 17.43 COL 35 WIDGET-ID 4
-     IMAGE-1 AT ROW 1.95 COL 24.6 WIDGET-ID 14
-    WITH 1 DOWN NO-BOX KEEP-TAB-ORDER OVERLAY 
-         SIDE-LABELS NO-UNDERLINE THREE-D 
-         AT COL 1 ROW 1
-         SIZE 60 BY 22 WIDGET-ID 200.
 
 DEFINE FRAME fSearchGender
      btnFind AT ROW 17.43 COL 6 WIDGET-ID 30
@@ -510,6 +487,31 @@ DEFINE FRAME fSearchProductType
          AT COL 1 ROW 1
          SIZE 60 BY 22
          FONT 10 WIDGET-ID 700.
+
+DEFINE FRAME fResults
+     btnHomeResults AT ROW 20.29 COL 36 WIDGET-ID 28
+     edSearchQuery AT ROW 5.76 COL 6 NO-LABEL WIDGET-ID 36
+     brResults AT ROW 11.48 COL 6 WIDGET-ID 500
+     btnBack AT ROW 20.29 COL 6 WIDGET-ID 38
+     imageResults AT ROW 1.95 COL 24.6 WIDGET-ID 2
+    WITH 1 DOWN NO-BOX KEEP-TAB-ORDER OVERLAY 
+         SIDE-LABELS NO-UNDERLINE THREE-D 
+         AT COL 1 ROW 1
+         SIZE 60 BY 22
+         FONT 10 WIDGET-ID 400.
+
+DEFINE FRAME fHome
+     btnSearch1 AT ROW 6.71 COL 7 WIDGET-ID 2
+     btnSearch2 AT ROW 6.71 COL 35 WIDGET-ID 12
+     btnSearch3 AT ROW 12.05 COL 7 WIDGET-ID 10
+     btnSearch4 AT ROW 12.05 COL 35 WIDGET-ID 8
+     btnSearch5 AT ROW 17.43 COL 7 WIDGET-ID 6
+     btnSearch6 AT ROW 17.43 COL 35 WIDGET-ID 4
+     IMAGE-1 AT ROW 1.95 COL 24.6 WIDGET-ID 14
+    WITH 1 DOWN NO-BOX KEEP-TAB-ORDER OVERLAY 
+         SIDE-LABELS NO-UNDERLINE THREE-D 
+         AT COL 1 ROW 1
+         SIZE 60 BY 22 WIDGET-ID 200.
 
 
 /* *********************** Procedure Settings ************************ */
@@ -579,11 +581,11 @@ ASSIGN FRAME fHome:FRAME = FRAME fMain:HANDLE
 
 DEFINE VARIABLE XXTABVALXX AS LOGICAL NO-UNDO.
 
-ASSIGN XXTABVALXX = FRAME fResultsBrand:MOVE-BEFORE-TAB-ITEM (FRAME fResults:HANDLE)
-       XXTABVALXX = FRAME fHome:MOVE-BEFORE-TAB-ITEM (FRAME fResultsBrand:HANDLE)
-       XXTABVALXX = FRAME fSearchGender:MOVE-BEFORE-TAB-ITEM (FRAME fHome:HANDLE)
+ASSIGN XXTABVALXX = FRAME fSearchGender:MOVE-BEFORE-TAB-ITEM (FRAME fResultsBrand:HANDLE)
        XXTABVALXX = FRAME fSearchBrand:MOVE-BEFORE-TAB-ITEM (FRAME fSearchGender:HANDLE)
        XXTABVALXX = FRAME fSearchProductType:MOVE-BEFORE-TAB-ITEM (FRAME fSearchBrand:HANDLE)
+       XXTABVALXX = FRAME fResults:MOVE-BEFORE-TAB-ITEM (FRAME fSearchProductType:HANDLE)
+       XXTABVALXX = FRAME fHome:MOVE-BEFORE-TAB-ITEM (FRAME fResults:HANDLE)
 /* END-ASSIGN-TABS */.
 
 /* SETTINGS FOR FRAME fResults
@@ -1220,6 +1222,8 @@ DO:
   DEFINE VARIABLE lvRegularSizes AS CHARACTER NO-UNDO.
   DEFINE VARIABLE lvShoeSizes AS CHARACTER NO-UNDO.
 
+  /* Changes the options in the size drop down box based on the selected product type */
+
   ASSIGN
       lvRegularSizes = "Size,S,M,L,XL,XXL"
       lvShoeSizes = "Size,6,6.5,7,7.5,8,8.5,9,9.5,10,10.5,11,12,13".
@@ -1266,6 +1270,8 @@ DO:
     DEFINE VARIABLE lvCount AS INTEGER NO-UNDO.
     DEFINE VARIABLE lvRegularSizes AS CHARACTER NO-UNDO.
     DEFINE VARIABLE lvShoeSizes AS CHARACTER NO-UNDO.
+
+    /* Changes the options in the size drop down box based on the selected product type */
 
     ASSIGN
         lvRegularSizes = "Size,S,M,L,XL,XXL"
@@ -1489,8 +1495,9 @@ PROCEDURE prFind :
     MAINBLOCK:
     DO WITH FRAME {&FRAME-NAME}:
 
-        CASE pvSearchType:
+        EMPTY TEMP-TABLE ttResults.
 
+        CASE pvSearchType:
 
             /* When the search type is a gender */
             WHEN 1 OR WHEN 2 OR WHEN 3 OR WHEN 4 THEN
@@ -1567,6 +1574,24 @@ PROCEDURE prFind :
                     + '" AND OurProducts.Price > ' + REPLACE(TRIM(fiPriceMin:SCREEN-VALUE, "£"), ",", "") + ' OurPoducts.Price < ' + REPLACE(TRIM(fiPriceMax:SCREEN-VALUE, "£"), ",", "")
                     + ' AND OurProducts.Brand = "' + cbBrand:SCREEN-VALUE + '" AND OurProducts.Location = "' + cbLocation:SCREEN-VALUE + '".'.
 
+                /* Get data from database for browse on results screen */
+                FOR EACH OurProducts WHERE OurProducts.Gender = lvGender AND OurProducts.ProductType = cbProductType:SCREEN-VALUE
+                    AND LOOKUP(cbSize:SCREEN-VALUE, OurProducts.SIZE, "/") <> 0 AND OurProducts.Colour = cbColour:SCREEN-VALUE
+                    AND OurProducts.Price > DECIMAL(REPLACE(TRIM(fiPriceMin:SCREEN-VALUE, "£"), ",", "")) AND OurProducts.Price < DECIMAL(REPLACE(TRIM(fiPriceMax:SCREEN-VALUE, "£"), ",", ""))
+                    AND OurProducts.Brand = cbBrand:SCREEN-VALUE NO-LOCK:
+
+                    CREATE ttResults.
+                    ASSIGN
+                        ttResults.tProductDescription = OurProducts.ProductDescription
+                        ttResults.tBrand = OurProducts.Brand
+                        ttResults.tQuantity = OurProducts.Quantity
+                        ttResults.tAvailableInStore = cbLocation:SCREEN-VALUE = OurProducts.Location.
+                END.
+
+                CLOSE QUERY brResults.
+
+                OPEN QUERY brResults FOR EACH ttResults NO-LOCK.
+
             END.
 
             /* When the search type is brand,
@@ -1631,6 +1656,25 @@ PROCEDURE prFind :
                     + '" AND OurProducts.Price > ' + REPLACE(TRIM(fiPriceMin2:SCREEN-VALUE, "£"), ",", "") + ' OurPoducts.Price < ' + REPLACE(TRIM(fiPriceMax2:SCREEN-VALUE, "£"), ",", "")
                     + ' AND OurProducts.Brand = "' + fiSearchBrand:SCREEN-VALUE + '" AND OurProducts.Location = "' + cbLocation2:SCREEN-VALUE + '".'.
 
+                /* Get data from database for browse on results screen */
+                FOR EACH OurProducts WHERE OurProducts.Gender = cbGender2:SCREEN-VALUE AND OurProducts.ProductType = cbProductType2:SCREEN-VALUE
+                    AND LOOKUP(cbSize2:SCREEN-VALUE, OurProducts.SIZE, "/") <> 0 AND OurProducts.Colour = cbColour2:SCREEN-VALUE
+                    AND OurProducts.Price > DECIMAL(REPLACE(TRIM(fiPriceMin2:SCREEN-VALUE, "£"), ",", "")) AND OurProducts.Price < DECIMAL(REPLACE(TRIM(fiPriceMax2:SCREEN-VALUE, "£"), ",", ""))
+                    AND OurProducts.Brand = fiSearchBrand:SCREEN-VALUE NO-LOCK:
+
+                    CREATE ttResults.
+                    ASSIGN
+                        ttResults.tProductDescription = OurProducts.ProductDescription
+                        ttResults.tBrand = OurProducts.Brand
+                        ttResults.tQuantity = OurProducts.Quantity
+                        ttResults.tAvailableInStore = cbLocation2:SCREEN-VALUE = OurProducts.Location.
+                END.
+
+                CLOSE QUERY brResults-2.
+
+                OPEN QUERY brResults-2 FOR EACH ttResults NO-LOCK.
+
+
             END.
 
             /* When the search type is product type,
@@ -1694,6 +1738,25 @@ PROCEDURE prFind :
                     + '" AND LOOKUP("' + cbSize3:SCREEN-VALUE + '", OurProducts.Size, "/") <> 0 AND OurProducts.Colour = "' + cbColour3:SCREEN-VALUE
                     + '" AND OurProducts.Price > ' + REPLACE(TRIM(fiPriceMin3:SCREEN-VALUE, "£"), ",", "") + ' OurPoducts.Price < ' + REPLACE(TRIM(fiPriceMax3:SCREEN-VALUE, "£"), ",", "")
                     + ' AND OurProducts.Brand = "' + cbBrand3:SCREEN-VALUE + '" AND OurProducts.Location = "' + cbLocation3:SCREEN-VALUE + '".'.
+
+                /* Get data from database for browse on results screen */
+                FOR EACH OurProducts WHERE OurProducts.Gender = cbGender3:SCREEN-VALUE AND OurProducts.ProductType = fiSearchProductType:SCREEN-VALUE
+                    AND LOOKUP(cbSize3:SCREEN-VALUE, OurProducts.SIZE, "/") <> 0 AND OurProducts.Colour = cbColour3:SCREEN-VALUE
+                    AND OurProducts.Price > DECIMAL(REPLACE(TRIM(fiPriceMin3:SCREEN-VALUE, "£"), ",", "")) AND OurProducts.Price < DECIMAL(REPLACE(TRIM(fiPriceMax3:SCREEN-VALUE, "£"), ",", ""))
+                    AND OurProducts.Brand = cbBrand3:SCREEN-VALUE NO-LOCK:
+
+                    CREATE ttResults.
+                    ASSIGN
+                        ttResults.tProductDescription = OurProducts.ProductDescription
+                        ttResults.tBrand = OurProducts.Brand
+                        ttResults.tQuantity = OurProducts.Quantity
+                        ttResults.tAvailableInStore = cbLocation3:SCREEN-VALUE = OurProducts.Location.
+                END.
+
+                CLOSE QUERY brResults.
+
+                OPEN QUERY brResults FOR EACH ttResults NO-LOCK.
+
 
             END.
 
