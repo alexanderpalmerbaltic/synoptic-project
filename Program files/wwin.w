@@ -408,27 +408,64 @@ DEFINE FRAME fMain
          AT COL 1 ROW 1
          SIZE 60 BY 22 WIDGET-ID 100.
 
-DEFINE FRAME fSearchProductType
-     btnFind-3 AT ROW 17.43 COL 6 WIDGET-ID 30
-     cbGender3 AT ROW 5.76 COL 6 NO-LABEL WIDGET-ID 26
-     cbBrand3 AT ROW 7.67 COL 6 NO-LABEL WIDGET-ID 24
-     cbSize3 AT ROW 9.57 COL 6 NO-LABEL WIDGET-ID 10
-     cbColour3 AT ROW 11.48 COL 6 NO-LABEL WIDGET-ID 18
-     fiPriceMin3 AT ROW 13.62 COL 6 NO-LABEL WIDGET-ID 20
-     fiPriceMax3 AT ROW 13.62 COL 41 COLON-ALIGNED NO-LABEL WIDGET-ID 22
-     cbLocation3 AT ROW 15.52 COL 6 NO-LABEL WIDGET-ID 40
-     btnHomeSearch-3 AT ROW 20.29 COL 6 WIDGET-ID 28
-     fiSearchProductType AT ROW 3.19 COL 29 COLON-ALIGNED NO-LABEL WIDGET-ID 38
-     "Price Min" VIEW-AS TEXT
-          SIZE 13 BY .62 AT ROW 12.91 COL 6 WIDGET-ID 42
-     "Price Max" VIEW-AS TEXT
-          SIZE 13 BY .62 AT ROW 12.91 COL 43 WIDGET-ID 44
-     imageSearch-3 AT ROW 1.95 COL 11.4 WIDGET-ID 32
+DEFINE FRAME fResults
+     btnHomeResults AT ROW 20.29 COL 36 WIDGET-ID 28
+     edSearchQuery AT ROW 5.76 COL 6 NO-LABEL WIDGET-ID 36
+     brResults AT ROW 11.48 COL 6 WIDGET-ID 500
+     btnBack AT ROW 20.29 COL 6 WIDGET-ID 38
+     imageResults AT ROW 1.95 COL 24.6 WIDGET-ID 2
     WITH 1 DOWN NO-BOX KEEP-TAB-ORDER OVERLAY 
          SIDE-LABELS NO-UNDERLINE THREE-D 
          AT COL 1 ROW 1
          SIZE 60 BY 22
-         FONT 10 WIDGET-ID 700.
+         FONT 10 WIDGET-ID 400.
+
+DEFINE FRAME fResultsBrand
+     btnHomeResults-2 AT ROW 20.29 COL 36 WIDGET-ID 28
+     edSearchQuery-2 AT ROW 5.76 COL 6 NO-LABEL WIDGET-ID 36
+     brResults-2 AT ROW 11.48 COL 6 WIDGET-ID 500
+     btnBack-2 AT ROW 20.29 COL 6 WIDGET-ID 40
+     fiResultsBrand AT ROW 3.14 COL 29 COLON-ALIGNED NO-LABEL WIDGET-ID 38
+     imageResults-2 AT ROW 1.95 COL 11.4 WIDGET-ID 2
+    WITH 1 DOWN NO-BOX KEEP-TAB-ORDER OVERLAY 
+         SIDE-LABELS NO-UNDERLINE THREE-D 
+         AT COL 1 ROW 1
+         SIZE 60 BY 22
+         FONT 10 WIDGET-ID 800.
+
+DEFINE FRAME fHome
+     btnSearch1 AT ROW 6.71 COL 7 WIDGET-ID 2
+     btnSearch2 AT ROW 6.71 COL 35 WIDGET-ID 12
+     btnSearch3 AT ROW 12.05 COL 7 WIDGET-ID 10
+     btnSearch4 AT ROW 12.05 COL 35 WIDGET-ID 8
+     btnSearch5 AT ROW 17.43 COL 7 WIDGET-ID 6
+     btnSearch6 AT ROW 17.43 COL 35 WIDGET-ID 4
+     IMAGE-1 AT ROW 1.95 COL 24.6 WIDGET-ID 14
+    WITH 1 DOWN NO-BOX KEEP-TAB-ORDER OVERLAY 
+         SIDE-LABELS NO-UNDERLINE THREE-D 
+         AT COL 1 ROW 1
+         SIZE 60 BY 22 WIDGET-ID 200.
+
+DEFINE FRAME fSearchGender
+     btnFind AT ROW 17.43 COL 6 WIDGET-ID 30
+     cbProductType AT ROW 5.76 COL 6 NO-LABEL WIDGET-ID 4
+     cbSize AT ROW 7.67 COL 6 NO-LABEL WIDGET-ID 10
+     cbColour AT ROW 9.57 COL 6 NO-LABEL WIDGET-ID 18
+     fiPriceMin AT ROW 11.71 COL 4 COLON-ALIGNED NO-LABEL WIDGET-ID 20
+     fiPriceMax AT ROW 11.71 COL 41 COLON-ALIGNED NO-LABEL WIDGET-ID 22
+     cbBrand AT ROW 13.62 COL 6 NO-LABEL WIDGET-ID 24
+     cbLocation AT ROW 15.52 COL 6 NO-LABEL WIDGET-ID 40
+     btnHomeSearch AT ROW 20.29 COL 6 WIDGET-ID 28
+     "Price Min" VIEW-AS TEXT
+          SIZE 13 BY .62 AT ROW 11 COL 6 WIDGET-ID 42
+     "Price Max" VIEW-AS TEXT
+          SIZE 13 BY .62 AT ROW 11 COL 43 WIDGET-ID 44
+     imageSearch AT ROW 1.95 COL 24.6 WIDGET-ID 32
+    WITH 1 DOWN NO-BOX KEEP-TAB-ORDER OVERLAY 
+         SIDE-LABELS NO-UNDERLINE THREE-D 
+         AT COL 1 ROW 1
+         SIZE 60 BY 22
+         FONT 10 WIDGET-ID 300.
 
 DEFINE FRAME fSearchBrand
      btnFind-2 AT ROW 17.43 COL 6 WIDGET-ID 30
@@ -452,64 +489,27 @@ DEFINE FRAME fSearchBrand
          SIZE 60 BY 22
          FONT 10 WIDGET-ID 600.
 
-DEFINE FRAME fSearchGender
-     btnFind AT ROW 17.43 COL 6 WIDGET-ID 30
-     cbProductType AT ROW 5.76 COL 6 NO-LABEL WIDGET-ID 4
-     cbSize AT ROW 7.67 COL 6 NO-LABEL WIDGET-ID 10
-     cbColour AT ROW 9.57 COL 6 NO-LABEL WIDGET-ID 18
-     fiPriceMin AT ROW 11.71 COL 4 COLON-ALIGNED NO-LABEL WIDGET-ID 20
-     fiPriceMax AT ROW 11.71 COL 41 COLON-ALIGNED NO-LABEL WIDGET-ID 22
-     cbBrand AT ROW 13.62 COL 6 NO-LABEL WIDGET-ID 24
-     cbLocation AT ROW 15.52 COL 6 NO-LABEL WIDGET-ID 40
-     btnHomeSearch AT ROW 20.29 COL 6 WIDGET-ID 28
+DEFINE FRAME fSearchProductType
+     btnFind-3 AT ROW 17.43 COL 6 WIDGET-ID 30
+     cbGender3 AT ROW 5.76 COL 6 NO-LABEL WIDGET-ID 26
+     cbBrand3 AT ROW 7.67 COL 6 NO-LABEL WIDGET-ID 24
+     cbSize3 AT ROW 9.57 COL 6 NO-LABEL WIDGET-ID 10
+     cbColour3 AT ROW 11.48 COL 6 NO-LABEL WIDGET-ID 18
+     fiPriceMin3 AT ROW 13.62 COL 6 NO-LABEL WIDGET-ID 20
+     fiPriceMax3 AT ROW 13.62 COL 41 COLON-ALIGNED NO-LABEL WIDGET-ID 22
+     cbLocation3 AT ROW 15.52 COL 6 NO-LABEL WIDGET-ID 40
+     btnHomeSearch-3 AT ROW 20.29 COL 6 WIDGET-ID 28
+     fiSearchProductType AT ROW 3.19 COL 29 COLON-ALIGNED NO-LABEL WIDGET-ID 38
      "Price Min" VIEW-AS TEXT
-          SIZE 13 BY .62 AT ROW 11 COL 6 WIDGET-ID 42
+          SIZE 13 BY .62 AT ROW 12.91 COL 6 WIDGET-ID 42
      "Price Max" VIEW-AS TEXT
-          SIZE 13 BY .62 AT ROW 11 COL 43 WIDGET-ID 44
-     imageSearch AT ROW 1.95 COL 24.6 WIDGET-ID 32
+          SIZE 13 BY .62 AT ROW 12.91 COL 43 WIDGET-ID 44
+     imageSearch-3 AT ROW 1.95 COL 11.4 WIDGET-ID 32
     WITH 1 DOWN NO-BOX KEEP-TAB-ORDER OVERLAY 
          SIDE-LABELS NO-UNDERLINE THREE-D 
          AT COL 1 ROW 1
          SIZE 60 BY 22
-         FONT 10 WIDGET-ID 300.
-
-DEFINE FRAME fHome
-     btnSearch1 AT ROW 6.71 COL 7 WIDGET-ID 2
-     btnSearch2 AT ROW 6.71 COL 35 WIDGET-ID 12
-     btnSearch3 AT ROW 12.05 COL 7 WIDGET-ID 10
-     btnSearch4 AT ROW 12.05 COL 35 WIDGET-ID 8
-     btnSearch5 AT ROW 17.43 COL 7 WIDGET-ID 6
-     btnSearch6 AT ROW 17.43 COL 35 WIDGET-ID 4
-     IMAGE-1 AT ROW 1.95 COL 24.6 WIDGET-ID 14
-    WITH 1 DOWN NO-BOX KEEP-TAB-ORDER OVERLAY 
-         SIDE-LABELS NO-UNDERLINE THREE-D 
-         AT COL 1 ROW 1
-         SIZE 60 BY 22 WIDGET-ID 200.
-
-DEFINE FRAME fResultsBrand
-     btnHomeResults-2 AT ROW 20.29 COL 36 WIDGET-ID 28
-     edSearchQuery-2 AT ROW 5.76 COL 6 NO-LABEL WIDGET-ID 36
-     brResults-2 AT ROW 11.48 COL 6 WIDGET-ID 500
-     btnBack-2 AT ROW 20.29 COL 6 WIDGET-ID 40
-     fiResultsBrand AT ROW 3.14 COL 29 COLON-ALIGNED NO-LABEL WIDGET-ID 38
-     imageResults-2 AT ROW 1.95 COL 11.4 WIDGET-ID 2
-    WITH 1 DOWN NO-BOX KEEP-TAB-ORDER OVERLAY 
-         SIDE-LABELS NO-UNDERLINE THREE-D 
-         AT COL 1 ROW 1
-         SIZE 60 BY 22
-         FONT 10 WIDGET-ID 800.
-
-DEFINE FRAME fResults
-     btnHomeResults AT ROW 20.29 COL 36 WIDGET-ID 28
-     edSearchQuery AT ROW 5.76 COL 6 NO-LABEL WIDGET-ID 36
-     brResults AT ROW 11.48 COL 6 WIDGET-ID 500
-     btnBack AT ROW 20.29 COL 6 WIDGET-ID 38
-     imageResults AT ROW 1.95 COL 24.6 WIDGET-ID 2
-    WITH 1 DOWN NO-BOX KEEP-TAB-ORDER OVERLAY 
-         SIDE-LABELS NO-UNDERLINE THREE-D 
-         AT COL 1 ROW 1
-         SIZE 60 BY 22
-         FONT 10 WIDGET-ID 400.
+         FONT 10 WIDGET-ID 700.
 
 
 /* *********************** Procedure Settings ************************ */
@@ -579,11 +579,11 @@ ASSIGN FRAME fHome:FRAME = FRAME fMain:HANDLE
 
 DEFINE VARIABLE XXTABVALXX AS LOGICAL NO-UNDO.
 
-ASSIGN XXTABVALXX = FRAME fSearchProductType:MOVE-BEFORE-TAB-ITEM (FRAME fHome:HANDLE)
-       XXTABVALXX = FRAME fSearchGender:MOVE-BEFORE-TAB-ITEM (FRAME fSearchProductType:HANDLE)
-       XXTABVALXX = FRAME fResultsBrand:MOVE-BEFORE-TAB-ITEM (FRAME fSearchGender:HANDLE)
-       XXTABVALXX = FRAME fSearchBrand:MOVE-BEFORE-TAB-ITEM (FRAME fResultsBrand:HANDLE)
-       XXTABVALXX = FRAME fResults:MOVE-BEFORE-TAB-ITEM (FRAME fSearchBrand:HANDLE)
+ASSIGN XXTABVALXX = FRAME fResultsBrand:MOVE-BEFORE-TAB-ITEM (FRAME fResults:HANDLE)
+       XXTABVALXX = FRAME fHome:MOVE-BEFORE-TAB-ITEM (FRAME fResultsBrand:HANDLE)
+       XXTABVALXX = FRAME fSearchGender:MOVE-BEFORE-TAB-ITEM (FRAME fHome:HANDLE)
+       XXTABVALXX = FRAME fSearchBrand:MOVE-BEFORE-TAB-ITEM (FRAME fSearchGender:HANDLE)
+       XXTABVALXX = FRAME fSearchProductType:MOVE-BEFORE-TAB-ITEM (FRAME fSearchBrand:HANDLE)
 /* END-ASSIGN-TABS */.
 
 /* SETTINGS FOR FRAME fResults
@@ -1563,7 +1563,7 @@ PROCEDURE prFind :
 
                 /* Database query to be displayed on the results screen is created */
                 lvQuery = 'FOR EACH OurProducts WHERE OurProducts.Gender = "' + lvGender + '" AND OurProducts.ProductType = "' + cbProductType:SCREEN-VALUE
-                    + '" AND OurProducts.Size = "' + cbSize:SCREEN-VALUE + '" AND OurProducts.Colour = "' + cbColour:SCREEN-VALUE
+                    + '" AND LOOKUP("' + cbSize:SCREEN-VALUE + '", OurProducts.Size, "/") <> 0 AND OurProducts.Colour = "' + cbColour:SCREEN-VALUE
                     + '" AND OurProducts.Price > ' + REPLACE(TRIM(fiPriceMin:SCREEN-VALUE, "£"), ",", "") + ' OurPoducts.Price < ' + REPLACE(TRIM(fiPriceMax:SCREEN-VALUE, "£"), ",", "")
                     + ' AND OurProducts.Brand = "' + cbBrand:SCREEN-VALUE + '" AND OurProducts.Location = "' + cbLocation:SCREEN-VALUE + '".'.
 
@@ -1627,7 +1627,7 @@ PROCEDURE prFind :
                     LEAVE MAINBLOCK.
 
                 lvQuery = 'FOR EACH OurProducts WHERE OurProducts.Gender = "' + cbGender2:SCREEN-VALUE + '" AND OurProducts.ProductType = "' + cbProductType2:SCREEN-VALUE
-                    + '" AND OurProducts.Size = "' + cbSize2:SCREEN-VALUE + '" AND OurProducts.Colour = "' + cbColour2:SCREEN-VALUE
+                    + '" AND LOOKUP("' + cbSize2:SCREEN-VALUE + '", OurProducts.Size, "/") <> 0 AND OurProducts.Colour = "' + cbColour2:SCREEN-VALUE
                     + '" AND OurProducts.Price > ' + REPLACE(TRIM(fiPriceMin2:SCREEN-VALUE, "£"), ",", "") + ' OurPoducts.Price < ' + REPLACE(TRIM(fiPriceMax2:SCREEN-VALUE, "£"), ",", "")
                     + ' AND OurProducts.Brand = "' + fiSearchBrand:SCREEN-VALUE + '" AND OurProducts.Location = "' + cbLocation2:SCREEN-VALUE + '".'.
 
@@ -1691,7 +1691,7 @@ PROCEDURE prFind :
                     LEAVE MAINBLOCK.
 
                 lvQuery = 'FOR EACH OurProducts WHERE OurProducts.Gender = "' + cbGender3:SCREEN-VALUE + '" AND OurProducts.ProductType = "' + fiSearchProductType:SCREEN-VALUE
-                    + '" AND OurProducts.Size = "' + cbSize3:SCREEN-VALUE + '" AND OurProducts.Colour = "' + cbColour3:SCREEN-VALUE
+                    + '" AND LOOKUP("' + cbSize3:SCREEN-VALUE + '", OurProducts.Size, "/") <> 0 AND OurProducts.Colour = "' + cbColour3:SCREEN-VALUE
                     + '" AND OurProducts.Price > ' + REPLACE(TRIM(fiPriceMin3:SCREEN-VALUE, "£"), ",", "") + ' OurPoducts.Price < ' + REPLACE(TRIM(fiPriceMax3:SCREEN-VALUE, "£"), ",", "")
                     + ' AND OurProducts.Brand = "' + cbBrand3:SCREEN-VALUE + '" AND OurProducts.Location = "' + cbLocation3:SCREEN-VALUE + '".'.
 
